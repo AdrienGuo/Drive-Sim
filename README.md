@@ -43,11 +43,8 @@
 方程式如下
 
 ![](http://latex.codecogs.com/svg.latex?x(t&plus;1)&space;=&space;x(t)&space;&plus;&space;cos(\phi(t)&space;&plus;&space;\theta(t))&space;&plus;&space;sin(\theta(t))&space;sin(\phi(t)))
-
-
-$$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$$  
-$$y(t+1) = y(t) + sin(\phi(t) + \theta(t)) - sin(\theta(t)) cos(\phi(t))$$  
-$$\phi(t+1) = \phi(t) - arcsin(\frac{2sin(\theta(t))}{b})$$  
+![](http://latex.codecogs.com/svg.latex?y(t&plus;1)&space;=&space;y(t)&space;&plus;&space;sin(\phi(t)&space;&plus;&space;\theta(t))&space;-&space;sin(\theta(t))&space;cos(\phi(t)))
+![](http://latex.codecogs.com/svg.latex?\phi(t&plus;1)&space;=&space;\phi(t)&space;-&space;arcsin(\frac{2sin(\theta(t))}{b}))
 
 x: 車子所在的 x 座標  
 y: 車子所在的 y 座標  
