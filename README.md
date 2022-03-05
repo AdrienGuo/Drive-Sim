@@ -40,7 +40,12 @@
 ##### def vehicle_move(x, y, theta, empty)  
 目的：這裡描述模擬車的運動方程式  
 
-方程式如下  $$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$$ $$y(t+1) = y(t) + sin(\phi(t) + \theta(t)) - sin(\theta(t)) cos(\phi(t))$$ $$\phi(t+1) = \phi(t) - arcsin(\frac{2sin(\theta(t))}{b})$$ x: 車子所在的 x 座標  
+方程式如下
+$$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$$ 
+$$y(t+1) = y(t) + sin(\phi(t) + \theta(t)) - sin(\theta(t)) cos(\phi(t))$$
+$$\phi(t+1) = \phi(t) - arcsin(\frac{2sin(\theta(t))}{b})$$
+
+x: 車子所在的 x 座標  
 y: 車子所在的 y 座標  
 theta: 車子要轉的角度(θ)  
 empty: 車子與水平線的夾角(ϕ)  
