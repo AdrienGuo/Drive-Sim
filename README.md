@@ -37,7 +37,7 @@
 ## 2. Code Explanation
 我分成 <u>車子與牆壁距離計算</u> 和 <u>RBF Model</u> 兩部分說明
 ### 2.1 計算車子到牆壁的距離
-##### def vehicle_move(x, y, theta, empty)  
+#### def vehicle_move(x, y, theta, empty)  
 目的：這裡描述模擬車的運動方程式  
 
 方程式如下
@@ -53,10 +53,27 @@ y: 車子所在的 y 座標
 theta: 車子要轉的角度(θ)  
 empty: 車子與水平線的夾角(ϕ)  
 
-##### def distance_cal(vehicle_x, vehicle_y, empty)
+#### def distance_cal(vehicle_x, vehicle_y, empty)
 目的：計算車子的三個方向到牆壁的距離  
 vehicle_x: 車子所在的 x 座標  
 vehicle_y: 車子所在的 y 座標  
 empty: 車子與水平線的夾角  
 這裡會計算車子和前、右、左三個方向的距離  
+
 計算方式分成五個步驟  
+
+1. def find_vehicle_front_all_wall_point(line)  
+車子這三個方向的直線可以算出一個直線方程式，將方程式和所有牆壁的方程式會算出很多交點。
+
+2. def find_point_on_wall(points)  
+但這些交點並不是真的都在那些牆壁上(有些是在那些牆壁的延長線上)，因此這個步驟要去判斷這些點是不是都在真的牆壁上。
+
+3. def find_correct_direction(points, vehicle_x, vehicle_y, empty)  
+接著要分析車子現在方向是朝向上面還是朝向下面，以及是朝向正右方(水平夾角=0)，或是朝向正左方(水平夾角=180)。
+
+4. def find_closest_point(points, vehicle_x, vehicle_y)  
+這個方向仍然可能有多個交點，因此要找離車子最近的那一個，這個交點即是正確的那個交點。
+
+5. def cal_dist(point, vehicle_x, vehicle_y)  
+將這個交點和車子的中心去算距離，回傳算出來的距離以及交點。
+
