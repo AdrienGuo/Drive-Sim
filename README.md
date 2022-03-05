@@ -41,7 +41,7 @@
 目的：這裡描述模擬車的運動方程式  
 
 方程式如下
-$$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$$  
+$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$  
 $$y(t+1) = y(t) + sin(\phi(t) + \theta(t)) - sin(\theta(t)) cos(\phi(t))$$  
 $$\phi(t+1) = \phi(t) - arcsin(\frac{2sin(\theta(t))}{b})$$  
 
