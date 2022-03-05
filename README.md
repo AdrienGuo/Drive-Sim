@@ -62,7 +62,8 @@ empty: 車子與水平線的夾角
 
 計算方式分成五個步驟  
 
-1. def find_vehicle_front_all_wall_point(line)  
+1. ```def find_vehicle_front_all_wall_point(line)```
+  
 車子這三個方向的直線可以算出一個直線方程式，將方程式和所有牆壁的方程式會算出很多交點。
 
 2. def find_point_on_wall(points)  
