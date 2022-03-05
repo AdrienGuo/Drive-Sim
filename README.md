@@ -42,7 +42,7 @@
 
 方程式如下
 
-![](<img src="http://latex.codecogs.com/svg.latex?x(t&plus;1)&space;=&space;x(t)&space;&plus;&space;cos(\phi(t)&space;&plus;&space;\theta(t))&space;&plus;&space;sin(\theta(t))&space;sin(\phi(t))" title="http://latex.codecogs.com/svg.latex?x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))" />)
+![](http://latex.codecogs.com/svg.latex?x(t&plus;1)&space;=&space;x(t)&space;&plus;&space;cos(\phi(t)&space;&plus;&space;\theta(t))&space;&plus;&space;sin(\theta(t))&space;sin(\phi(t)))
 
 
 $$x(t+1) = x(t) + cos(\phi(t) + \theta(t)) + sin(\theta(t)) sin(\phi(t))$$  
