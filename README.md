@@ -53,7 +53,8 @@ y: 車子所在的 y 座標
 theta: 車子要轉的角度(θ)  
 empty: 車子與水平線的夾角(ϕ)  
 
-#### def distance_cal(vehicle_x, vehicle_y, empty)
+#### ```def distance_cal(vehicle_x, vehicle_y, empty)```
+
 目的：計算車子的三個方向到牆壁的距離  
 vehicle_x: 車子所在的 x 座標  
 vehicle_y: 車子所在的 y 座標  
