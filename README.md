@@ -48,7 +48,7 @@
 ![](http://latex.codecogs.com/svg.latex?y(t&plus;1)&space;=&space;y(t)&space;&plus;&space;sin(\phi(t)&space;&plus;&space;\theta(t))&space;-&space;sin(\theta(t))&space;cos(\phi(t)))
 
 ![](http://latex.codecogs.com/svg.latex?\phi(t&plus;1)&space;=&space;\phi(t)&space;-&space;arcsin(\frac{2sin(\theta(t))}{b}))
-s
+
 x: 車子所在的 x 座標  
 y: 車子所在的 y 座標  
 theta: 車子要轉的角度(θ)  
@@ -121,9 +121,11 @@ output: 預測的角度(θ)
 
 - 右轉  
 當偵測到右邊的距離突然變大，則車子會開始進行右轉彎。
+<img src="https://i.imgur.com/JFMTsuX.png" width="300px">
 
 - 左轉  
 當偵測到左邊的距離突然變大，則車子會開始進行左轉彎。
+<img src="https://i.imgur.com/m9BTofv.png" width="300px">
 
 當車子偵測到有某一邊的數值突然變大時，則會開始朝那個方向進行轉彎。全部觀察下來，車子會朝距離大的那個方向進行轉彎，而距離相對小的時候會進行比較小幅度的轉彎，距離大的時候會進行相對較大幅度的轉彎。
 
