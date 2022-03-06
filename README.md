@@ -81,7 +81,7 @@ empty: 車子與水平線的夾角
 
 ### 2.2 RBF Model
 因規定不能使用現成的套件 ex: pytorch, tensorflow 等  
-因此這裡自己做一個 RBF Model  
+因此這裡自己做一個 RBF Model，包括模型的訓練方式、模型的參數參數更新等  
 
 > 這裡就不說明原理，只說明我怎麼做的
 
