@@ -48,7 +48,7 @@
 ![](http://latex.codecogs.com/svg.latex?y(t&plus;1)&space;=&space;y(t)&space;&plus;&space;sin(\phi(t)&space;&plus;&space;\theta(t))&space;-&space;sin(\theta(t))&space;cos(\phi(t)))
 
 ![](http://latex.codecogs.com/svg.latex?\phi(t&plus;1)&space;=&space;\phi(t)&space;-&space;arcsin(\frac{2sin(\theta(t))}{b}))
-
+s
 x: 車子所在的 x 座標  
 y: 車子所在的 y 座標  
 theta: 車子要轉的角度(θ)  
@@ -78,4 +78,54 @@ empty: 車子與水平線的夾角
 
 5. ```def cal_dist(point, vehicle_x, vehicle_y)```  
 將這個交點和車子的中心去算距離，回傳算出來的距離以及交點。
+
+### 2.2 RBF Model
+因規定不能使用現成的套件 ex: pytorch, tensorflow 等  
+因此這裡自己做一個 RBF Model  
+
+> 這裡就不說明原理，只說明我怎麼做的
+
+RBF Model 示意圖:  
+<img src="https://visualstudiomagazine.com/articles/2020/03/19/~/media/ECG/visualstudiomagazine/Images/2020/03/radial_basis_train_3.asxh" width="500px">  
+> 我們的輸出只會有一個，因為是要預測 "方向盤要轉多少角度"，是屬於 regression 的任務
+
+RBF 共分成兩個步驟，第一步要先分群，第二步才是真的訓練模型  
+分群的方式我採用的是 K-means  
+
+#### ```def kmeans(X, k, max_iters)```
+目的：將資料分成 k 群，算出每一群的中心點與標準差。  
+X: 所有的資料點  
+k: 分成 k 群  
+max_iters: 最大迭代次數  
+
+#### ```class RBFNN```
+- ```RBFNN.train(lr, n_epochs)```  
+目的：訓練 RBF 模型  
+learning rate: 0.0001  
+n_epochs: 500  
+基底函數:
+<img src="http://latex.codecogs.com/svg.latex?\phi_j(x)&space;=&space;exp(-&space;\frac{|x-m_j|^2}{2\sigma^{2}_{j}})"> (高斯分布)  
+利用 LMS演算法來更新模型參數
+
+- ```RBFNN.predict(X_pred)```  
+目的: 輸入要預測的資料，並輸出預測的角度  
+X_pred: 被預測的資料(前、右、左三個方向的距離)  
+output: 預測的角度(θ)  
+
+
+使用上方訓練完的 RBF 模型的參數，來預測我們輸入的資料。
+
+
+### 3. 實驗結果
+自動車可以順利地到達終點，且不論是在起跑線上的哪一點皆可。
+
+- 右轉  
+當偵測到右邊的距離突然變大，則車子會開始進行右轉彎。
+
+- 左轉  
+當偵測到左邊的距離突然變大，則車子會開始進行左轉彎。
+
+當車子偵測到有某一邊的數值突然變大時，則會開始朝那個方向進行轉彎。全部觀察下來，車子會朝距離大的那個方向進行轉彎，而距離相對小的時候會進行比較小幅度的轉彎，距離大的時候會進行相對較大幅度的轉彎。
+
+
 
