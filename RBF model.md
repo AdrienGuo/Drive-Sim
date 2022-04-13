@@ -10,5 +10,5 @@ RBF Network 的數學公式可以表示成 $F(x)= \sum^{J}_{j=1}w_jRBF(x, \mu_j)
 - b 代表可調整的偏移量
 
 ---
-RBF Network 的演算法通常會分成兩個階段的學習過程\
+RBF Network 的演算法通常會分成兩個階段的學習過程
 首先是
