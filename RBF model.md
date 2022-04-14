@@ -46,5 +46,14 @@ converge 的條件: S(群) 內的點不再改變，或是 E(中心點的更動�
 
 
 ### 2. RBF 群的權重學習 (監督式學習)
+這個步驟是要來學習 $w_m$  
+這裡採用 LMS Algorithm 來更新 $w_m$  
+誤差的公式為: $$E(n) = \frac{1}{2} (y_n - F(x_n))^2$$  
+接著各別對要更新的參數做偏微分  
+$$w_m(n+1) = w_m(n) - \alpha \frac{\partial E(n)}{\partial w_m(n)} = w_m(n) + \alpha (y_n - F(x_n)) RBF_m(x_n, \mu_m)$$
+$$b(n+1) = b(n) - \alpha \frac{\partial E(n)}{\partial b(n)} = b(n) + \alpha (y_n - F(x_n))$$
+一直不斷地重複這個步驟，就可以不斷地更新參數，看你要更新幾次 (epoch)
+
+因為專案的最後是要輸出一個角度，屬於回歸分析，最後的輸出只需要一個數值就好。  
 
 
