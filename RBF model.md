@@ -7,7 +7,7 @@ RBF Model 的全名是 Radial basis function network, 簡稱 RBFN，中文叫做
 <img src="https://i.imgur.com/Sg6OQHg.png" title="source: imgur.com" width="450px">
 
 RBF Network 的數學公式可以表示成 $F(x)= Output(\sum^{M}_{m=1}w_mRBF(x, \mu_m) + b)$
-- $w_m$ 代表第 m 個 RBF 神經元道類神經元的權重
+- $w_m$ 代表第 m 個 RBF 神經元到輸出神經元的權重
 - $RBF(x, \mu_m)$ 代表第 m 的 RBF 神經元輸出值的基底函數
 - b 代表可調整的偏移量
 
